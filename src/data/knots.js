@@ -1,3 +1,7 @@
+// helper to resolve video paths via Vite's asset handling
+const videoUrl = (fileName) =>
+  new URL(`../assets/videos/${fileName}`, import.meta.url).href
+
 const knots = [
   {
     id: 'cleat-hitch',
@@ -6,7 +10,7 @@ const knots = [
     whenToUse: 'Securing a boat to a cleat while docking or mooring.',
     difficulty: 'Beginner',
     category: 'Docking & Mooring',
-    video: '/videos/Cleat Hitch.mp4'
+    video: videoUrl('cleat-hitch.mp4')
   },
   {
     id: 'clove-hitch',
@@ -15,7 +19,7 @@ const knots = [
     whenToUse: 'Quickly securing fenders or temporary attachments on deck.',
     difficulty: 'Beginner',
     category: 'Docking & Mooring',
-    video: '/videos/Clove Hitch.mp4'
+    video: videoUrl('clove-hitch.mp4')
   },
   {
     id: 'two-and-two-half-hitches',
@@ -24,7 +28,7 @@ const knots = [
     whenToUse: 'Attaching a line to a post or ring when more security than a clove hitch is needed.',
     difficulty: 'Intermediate',
     category: 'Docking & Mooring',
-    video: '/videos/Two and Two Half Hitches.mp4'
+    video: videoUrl('two-and-two-half-hitches.mp4')
   },
   {
     id: 'bowline',
@@ -33,7 +37,7 @@ const knots = [
     whenToUse: 'Forming a secure loop for mooring lines or rescue loops.',
     difficulty: 'Beginner',
     category: 'Sail Handling & Rigging',
-    video: '/videos/Bowline Knot.mp4'
+    video: videoUrl('bowline.mp4')
   },
   {
     id: 'halyard-hitch',
@@ -42,7 +46,7 @@ const knots = [
     whenToUse: 'Tensioning sails or rigging during hoisting operations.',
     difficulty: 'Intermediate',
     category: 'Sail Handling & Rigging',
-    video: '/videos/Halyard Hitch.mp4'
+    video: videoUrl('halyard-hitch.mp4')
   },
   {
     id: 'figure-eight',
@@ -51,7 +55,7 @@ const knots = [
     whenToUse: 'Stopping line ends or as a safety knot on halyards.',
     difficulty: 'Beginner',
     category: 'Tensioning & Utility',
-    video: '/videos/Figure 8 knot.mp4'
+    video: videoUrl('figure-eight.mp4')
   },
   {
     id: 'midshipmans-hitch',
@@ -60,7 +64,7 @@ const knots = [
     whenToUse: 'Situations needing an adjustable but secure grip on a post or ring.',
     difficulty: 'Advanced',
     category: 'Tensioning & Utility',
-    video: '/videos/Midshipman’s Hitch.mp4'
+    video: videoUrl('midshipmans-hitch.mp4')
   },
   {
     id: 'rolling-hitch',
@@ -69,7 +73,7 @@ const knots = [
     whenToUse: 'When attaching a line to another line under tension (taking a strain).',
     difficulty: 'Intermediate',
     category: 'Tensioning & Utility',
-    video: '/videos/Rolling hitch.mp4'
+    video: videoUrl('rolling-hitch.mp4')
   },
   {
     id: 'reef-knot',
@@ -78,7 +82,7 @@ const knots = [
     whenToUse: 'Tying reefing lines or joining two similar-diameter ropes temporarily.',
     difficulty: 'Beginner',
     category: 'Joining & Safety',
-    video: '/videos/Reef Knot.mp4'
+    video: videoUrl('reef-knot.mp4')
   },
   {
     id: 'e-star-stopper',
@@ -87,7 +91,7 @@ const knots = [
     whenToUse: 'When you need a compact stopper that is easy to tie and untie.',
     difficulty: 'Advanced',
     category: 'Joining & Safety',
-    video: '/videos/ESTAR.mp4'
+    video: videoUrl('e-star-stopper.mp4')
   }
 ]
 

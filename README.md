@@ -14,6 +14,9 @@ Files added:
 - package.json — install and run scripts
 - index.html, vite.config.js
 - src/ (App, components, data, styles)
+- video files now live in `src/assets/videos`, imported via JavaScript helper
+
+> 🎥 **Video credit:** all knot demonstration footage is sourced from the [KayakDIY YouTube channel](https://www.youtube.com/@KayakDIY). Thanks to KayakDIY for sharing these excellent tutorials.
 
 Want me to run `npm install` and start the dev server now? Reply and I will run it here.
 

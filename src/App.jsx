@@ -13,7 +13,11 @@ export default function App() {
         </header>
         <KnotGallery />
       </main>
-      <footer className="site-footer">© Sailing Knots • Nautical theme</footer>
+      <footer className="site-footer">
+        © Sailing Knots 
+        <br />
+        Videos courtesy of <a href="https://www.youtube.com/@KayakDIY" target="_blank" rel="noopener noreferrer">KayakDIY</a>
+      </footer>
     </div>
   )
 }
