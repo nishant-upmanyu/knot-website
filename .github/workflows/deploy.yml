@@ -29,10 +29,24 @@ jobs:
         run: npm run build
 
       - name: deploy to gh-pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
-          publish_branch: gh-pages     # branch that will be served
-          force_orphan: true
-          keep_files: false
+        run: |
+          # configure git credentials for push
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          # make sure remote branch exists
+          git fetch origin gh-pages || true
+
+          # create orphan if necessary
+          if git show-ref --quiet refs/heads/gh-pages; then
+            git checkout gh-pages
+            git rm -rf . || true
+          else
+            git checkout --orphan gh-pages
+          fi
+
+          # copy build artifacts
+          cp -R dist/* .
+          git add --all
+          git commit -m "deploy from action" || echo "nothing to commit"
+          git push --force origin gh-pages
